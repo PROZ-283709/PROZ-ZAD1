@@ -40,6 +40,7 @@ public class LogWindow extends Application
 	 */
 	private void fillGrid(GridPane grid)
 	{
+	//VAR
 		Label srodowiskoLabel = new Label("Środowisko:");
 		Label uzytkownikLabel = new Label("Uzytkownik:");
 		Label hasloLabel = new Label("Haslo:");
@@ -48,22 +49,22 @@ public class LogWindow extends Application
 		uzytkownikBox = new ComboBox<>();
 		hasloField = new PasswordField();
 		
-		//CHOICEBOX
+	//CHOICEBOX
 		srodowiskoBox.setPrefSize(175, 40);
 		srodowiskoBox.getItems().addAll("Produkcyjne", "Testowe", "Deweloperskie");
 		srodowiskoBox.setOnAction( e -> srodowiskoBoxChanged() );				
 		srodowiskoBox.valueProperty().addListener((obs, oldVal, newVal) -> fieldChanged() );
 				
-		//COMBO BOX
+	//COMBO BOX
 		uzytkownikBox.setPrefSize(175,40);
 		uzytkownikBox.setEditable(true);		
 		uzytkownikBox.getEditor().textProperty().addListener((obs, oldVal, newVal) -> fieldChanged() );
 				
-		//PASSWORD FIELD
+	//PASSWORD FIELD
 		hasloField.setPrefSize(175, 40);
 		hasloField.textProperty().addListener((obs, oldVal, newVal) -> fieldChanged() );
 					
-		//GRID PANE
+	//GRID PANE
 		grid.setVgap(20);
 		grid.setHgap(20);	
 		grid.setPadding(new Insets(30, 20, 20, 30));
@@ -210,10 +211,12 @@ public class LogWindow extends Application
 	//VAR
 		GridPane grid = new GridPane();
 		
-		ButtonType logonBut = new ButtonType("Logon");//, ButtonData.OK_DONE);
-		ButtonType anulujBut = new ButtonType("Anuluj");//, ButtonData.CANCEL_CLOSE);
+		ButtonType logonBut = new ButtonType("Logon");
+		ButtonType anulujBut = new ButtonType("Anuluj");
 		
+	//FILLING GRID
 		fillGrid(grid);
+		
 	//DIALOG
 		dialog.getDialogPane().getButtonTypes().addAll(logonBut, anulujBut);
 		dialog.setTitle("Logowanie");
@@ -222,9 +225,11 @@ public class LogWindow extends Application
 	
 		logonButton = dialog.getDialogPane().lookupButton(logonBut);
 		logonButton.setDisable(true);
-		
+			
+	//URuCHOMIENIE DIALOGU I KONWEROWANIE JEGO REZULTATU
 		Pair<String, String> result = resultConverter( dialog.showAndWait(), logonBut );
 		
+	//WYSWIETLENIE REZULTATU
 		if(result != null) System.out.println("Środowisko=" + result.getKey() + ", Użytkownik=" + result.getValue());
 	}
 }
