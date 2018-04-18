@@ -12,6 +12,11 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.layout.GridPane;
 import javafx.util.Pair;
 
+/**************************************
+ * Klasa odpowiedzialna za okienko logowania
+ * @author Kamil Buczko
+ * @version 1.2
+ *************************************/
 public class LogonDialog
 {
 	private Dialog<ButtonType> dialog = new Dialog<>();

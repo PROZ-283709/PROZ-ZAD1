@@ -1,5 +1,11 @@
 package proz;
 
+/**************************************
+ * Klasa symulujaca baze danych
+ * @author Kamil Buczko
+ * @version 1.2
+ *************************************/
+
 public class DataBase {
 	
 	private String[][] proUsers;
