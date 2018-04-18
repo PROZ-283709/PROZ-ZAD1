@@ -15,7 +15,7 @@ import javafx.util.Pair;
 /**************************************
  * Klasa odpowiedzialna za okienko logowania
  * @author Kamil Buczko
- * @version 1.2
+ * @version 1.3
  *************************************/
 public class LogonDialog
 {
